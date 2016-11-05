@@ -6,7 +6,7 @@
 /*   By: bpatel <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/01 15:12:08 by bpatel            #+#    #+#             */
-/*   Updated: 2016/11/02 14:39:11 by bpatel           ###   ########.fr       */
+/*   Updated: 2016/11/03 22:20:40 by bpatel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,28 +32,4 @@ char *ft_strcpy(char *dst, char *src)
 	dst[index] = '\0';	
 	return (dst);
 }
-
-//int main(void)
-//{
-//	char word[10] = "poooooo";
-//	char word_1[10] = "foo";
-//
-////	char *word;
-////	char *word_1;
-//
-////	word = "poo";
-////	word_1 = "foo";
-//
-//	printf( "%s", word);
-//	printf( "%c", '\n');
-//	printf( "%s", word_1);
-//	printf( "%c", '\n');
-//	
-//	ft_strcpy(word, word_1);
-//	//strcpy(word, word_1);
-//	
-//	printf( "%s", word);
-//	printf( "%c", '\n');
-//	printf( "%s", word_1);
-//}
 

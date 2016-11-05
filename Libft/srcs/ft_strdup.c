@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bpatel <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 14:51:11 by bpatel            #+#    #+#             */
-/*   Updated: 2016/11/04 15:11:20 by bpatel           ###   ########.fr       */
+/*   Created: 2016/11/03 17:55:44 by bpatel            #+#    #+#             */
+/*   Updated: 2016/11/03 18:49:14 by bpatel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//what happens if S1 or S2 are not passed through? 
-
 #include "libft.h"
 
-int ft_strcmp(const char *s1, const char *s2)
+char *ft_strdup(char *s1)
 {
+	int size_of_char;
 	int i;
-	int total;
-
+	char *test;
+	
 	i = 0;
-	total = 0;
-	while(s1[i] != '\0')
+	size_of_char = ft_strlen(s1);
+	test = (char*)malloc((size_of_char+1)*sizeof(char));
+	
+	if(!test)
+		return NULL;
+	
+	while (i < size_of_char + 1)
 	{
-		total = total + (s1[i] - s2[i]);
+		test[i] = s1[i];
 		i++;
-	}
-	return total;
+	}	
+	return test;
 }
-
-// int ft_strcmp_piscine(const char *s1, const char *s2)
-// {
-
-// 	while(*s1 && (*s1==*s2))
-// 	{
-// 		s1++;
-// 		s2++;
-// 	}
-// 	return(*s1-*s2);
-// }

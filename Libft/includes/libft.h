@@ -6,25 +6,26 @@
 /*   By: bpatel <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/31 17:33:35 by bpatel            #+#    #+#             */
-/*   Updated: 2016/11/03 03:01:14 by bpatel           ###   ########.fr       */
+/*   Updated: 2016/11/03 23:34:28 by bpatel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 #ifndef _LIBFT_H_
 #define _LIBFT_H_
 
 int ft_strlen(char *str);
-//char *ft_strdup(char *string);
-//char ft_strcpy(char *src, char *dst);
-//char ft_strncpy(char *src, char *dst);
-//char *ft_strstr(char *haystack, char *needle);
+char *ft_strdup(char *s1);
+char *ft_strcpy(char *dst, char *src);
+char *ft_strncpy(char *dst, char *src, size_t len);
+char *ft_strstr(char *big, char *little);
 //char *ft_strnstr(char *haystack, char *needle, size_t len);
-//int strcmp(char *s1, char *s2);
-//int strncmp(char *s1, char *s2);
-//void ft_atoi(char *str);
+int ft_strcmp(const char *s1, const char *s2);
+int ft_strncmp(const char *s1, const char *s2, size_t n);
+int ft_atoi(const char *str);
 void ft_putnbr(int nb);
 void ft_putchar(char c);
 void ft_putstr(char *str);

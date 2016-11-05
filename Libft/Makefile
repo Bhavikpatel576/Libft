@@ -6,7 +6,7 @@
 #    By: bpatel <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/XX/XX 20:48:48 by bpatel            #+#    #+#              #
-#    Updated: 2016/11/03 02:31:46 by bpatel           ###   ########.fr        #
+#    Updated: 2016/11/03 21:36:02 by bpatel           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ LIB				= libft.a
 SRCS_DIR 		= srcs/
 INCLUDES_DIR	= includes/
 FILENAMES		= main.c
-LIB_FILES		= ft_putchar.c ft_putstr.c ft_strlen.c ft_strcpy.c ft_putnbr.c
+LIB_FILES		= ft_putchar.c ft_putstr.c ft_strlen.c ft_strcpy.c ft_putnbr.c ft_strdup.c ft_strncpy.c ft_strstr.c ft_atoi.c ft_strcmp.c \
+	ft_strncmp.c
 
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror -I $(INCLUDES_DIR)
