@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bpatel <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 01:26:44 by bpatel            #+#    #+#             */
-/*   Updated: 2016/11/03 17:52:05 by bpatel           ###   ########.fr       */
+/*   Created: 2016/11/09 22:06:28 by bpatel            #+#    #+#             */
+/*   Updated: 2016/11/09 22:14:18 by bpatel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//description: Sets every character of the string to the value '\0'
+
+
 #include "libft.h"
 
-void	ft_putnbr(int nb)
+void	ft_strclr(char *s)
 {
-	int min;
+	int i;
 
-	min = -2147483648;
-	if (nb == min)
+	i = 0;
+	if(!s)
+		NULL;
+	while(s[i] != '\0')
 	{
-		ft_putstr("-2147483648");
-		return ;
+		s[i] = '\0';
+		i++;
 	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb <= 9)
-	{
-		ft_putchar(nb + '0');
-		return ;
-	}
-	else
-	{
-		ft_putnbr(nb / 10);
-	}
-	ft_putnbr(nb % 10);
 }

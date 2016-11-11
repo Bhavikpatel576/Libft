@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bpatel <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 01:26:44 by bpatel            #+#    #+#             */
-/*   Updated: 2016/11/03 17:52:05 by bpatel           ###   ########.fr       */
+/*   Created: 2016/11/10 13:40:45 by bpatel            #+#    #+#             */
+/*   Updated: 2016/11/10 13:44:21 by bpatel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int nb)
+int	ft_strequ(char const *s1, char const *s2)
 {
-	int min;
+	int i;
 
-	min = -2147483648;
-	if (nb == min)
+	i = 0;
+	while ((s1 && s2) && (*s1 == *s2))
 	{
-		ft_putstr("-2147483648");
-		return ;
+		if (*s1 == '\0' & *s2 == '\0')
+			return (1);
+		s1++;
+		s2++;
 	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb <= 9)
-	{
-		ft_putchar(nb + '0');
-		return ;
-	}
-	else
-	{
-		ft_putnbr(nb / 10);
-	}
-	ft_putnbr(nb % 10);
+	return (0);
 }

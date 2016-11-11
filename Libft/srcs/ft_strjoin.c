@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bpatel <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 01:26:44 by bpatel            #+#    #+#             */
-/*   Updated: 2016/11/03 17:52:05 by bpatel           ###   ########.fr       */
+/*   Created: 2016/11/10 14:01:05 by bpatel            #+#    #+#             */
+/*   Updated: 2016/11/10 14:44:36 by bpatel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int nb)
+char		*ft_strjoin(char const *s1, char const *s2)
 {
-	int min;
+	int		total_len;
+	char	*string;
 
-	min = -2147483648;
-	if (nb == min)
-	{
-		ft_putstr("-2147483648");
-		return ;
-	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb <= 9)
-	{
-		ft_putchar(nb + '0');
-		return ;
-	}
-	else
-	{
-		ft_putnbr(nb / 10);
-	}
-	ft_putnbr(nb % 10);
+	total_len = ft_strlen(s1) + ft_strlen(s2);
+	string = (char *)malloc(sizeof(char) * (total_len + 1));
+	if (!string)
+		return (NULL);
+	ft_strcpy(string, s1);
+	ft_strcat(string, s2);
+	return (string);
 }

@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bpatel <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 01:26:44 by bpatel            #+#    #+#             */
-/*   Updated: 2016/11/03 17:52:05 by bpatel           ###   ########.fr       */
+/*   Created: 2016/11/06 13:59:53 by bpatel            #+#    #+#             */
+/*   Updated: 2016/11/06 14:03:39 by bpatel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int nb)
+void		*ft_bzero(void *s, size_t n)
 {
-	int min;
+	char	*b;
+	int		i;
 
-	min = -2147483648;
-	if (nb == min)
+	b = s;
+	i = 0;
+	while (n-- > 0)
 	{
-		ft_putstr("-2147483648");
-		return ;
+		b[i] = 0;
+		i++;
 	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb <= 9)
-	{
-		ft_putchar(nb + '0');
-		return ;
-	}
-	else
-	{
-		ft_putnbr(nb / 10);
-	}
-	ft_putnbr(nb % 10);
+	return (s);
 }

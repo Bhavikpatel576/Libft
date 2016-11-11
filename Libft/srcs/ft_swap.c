@@ -12,22 +12,11 @@
 
 #include <stdio.h>
 
-void ft_swap(int *a, int *b)
+void	ft_swap(char *a, char *b)
 {
-	int temp;
+	char temp;
+
 	temp = *a;
 	*a = *b;
 	*b = temp;
 }
-
-
-int main()
-{
-	int x = 112;
-	int y = 32;
-
-	ft_swap(&x, &y);
-
-	printf("First int: "" %d/n" "Second int:"" %d/n",x,y);
-}
-

@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bpatel <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 01:26:44 by bpatel            #+#    #+#             */
-/*   Updated: 2016/11/03 17:52:05 by bpatel           ###   ########.fr       */
+/*   Created: 2016/11/08 16:25:04 by bpatel            #+#    #+#             */
+/*   Updated: 2016/11/08 17:22:03 by bpatel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-void	ft_putnbr(int nb)
+char		*ft_strcat(char *restrict s1, const char *restrict s2)
 {
-	int min;
+	char	*string_one;
+	char	*string_two;
+	int		len;
+	int		index;
 
-	min = -2147483648;
-	if (nb == min)
+	string_one = (char *)s1;
+	string_two = (char *)s2;
+	len = ft_strlen(string_one);
+	index = 0;
+	while (string_two[index] != '\0')
 	{
-		ft_putstr("-2147483648");
-		return ;
+		string_one[len + index] = string_two[index];
+		index++;
 	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb <= 9)
-	{
-		ft_putchar(nb + '0');
-		return ;
-	}
-	else
-	{
-		ft_putnbr(nb / 10);
-	}
-	ft_putnbr(nb % 10);
+	string_one[len + index] = '\0';
+	return (s1);
 }

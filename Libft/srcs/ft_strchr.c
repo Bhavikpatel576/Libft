@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bpatel <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 01:26:44 by bpatel            #+#    #+#             */
-/*   Updated: 2016/11/03 17:52:05 by bpatel           ###   ########.fr       */
+/*   Created: 2016/11/09 13:49:06 by bpatel            #+#    #+#             */
+/*   Updated: 2016/11/09 13:50:02 by bpatel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// locates FIRST occurance of character pointed to by s (also includes '\0')
+// returns a pointer to the located character
+
 #include "libft.h"
 
-void	ft_putnbr(int nb)
+char *ft_strchr(const char *s, int c)
 {
-	int min;
+	char character;
+	char *string;
 
-	min = -2147483648;
-	if (nb == min)
+	string = (char *)s;
+	character = (char)c;
+
+	while(*string++ != '\0')
 	{
-		ft_putstr("-2147483648");
-		return ;
+		if(*string == character)
+			return(string);
 	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb <= 9)
-	{
-		ft_putchar(nb + '0');
-		return ;
-	}
-	else
-	{
-		ft_putnbr(nb / 10);
-	}
-	ft_putnbr(nb % 10);
+	if(*string == '\0')
+		return (0);
+	return(string);
 }

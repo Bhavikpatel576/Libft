@@ -12,18 +12,18 @@
 
 #include "libft.h"
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+int			ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
-	int total;
+	size_t	i;
+	int		total;
 
 	i = 0;
 	total = 0;
 	n = 0;
-	while(s1[i] != '\0' && i < n)
+	while (s1[i] != '\0' && i < n)
 	{
 		total = total + (s1[i] - s2[i]);
 		i++;
 	}
-	return total;
+	return (total);
 }
